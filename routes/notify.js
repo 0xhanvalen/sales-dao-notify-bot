@@ -5,7 +5,7 @@ const { SECRETS } = require('../config');
 const NOTIFY_ROUTER = express.Router();
 
 const trimString = (str, max) =>
-  str.length > max ? `${str.slice(0, max - 3)}...` : str;
+  str?.length > max ? `${str?.slice(0, max - 3)}...` : str;
 
 NOTIFY_ROUTER.post('/offer', async (req, res) => {
   let { offerName, offerDetails, targetPrice, commission, discordHandle } =
