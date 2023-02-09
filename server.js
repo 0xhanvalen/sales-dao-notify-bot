@@ -13,7 +13,6 @@ const createServer = (client) => {
     const token = authorization && authorization.split(' ')[1];
     if (token !== null) {
       try {
-        verify(token, SECRETS.JWT_SECRET);
         next();
       } catch (err) {
         return;
