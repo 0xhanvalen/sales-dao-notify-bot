@@ -10,6 +10,8 @@ const trimString = (str, max) =>
 NOTIFY_ROUTER.post('/offer', async (req, res) => {
   let { offerName, offerDetails, targetPrice, commission, discordHandle } =
     req.body;
+  let body = req.body;
+  console.log({body});
   try {
     const embed = new EmbedBuilder()
       .setColor('#D8315B')
