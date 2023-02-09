@@ -8,7 +8,7 @@ const trimString = (str, max) =>
   str?.length > max ? `${str?.slice(0, max - 3)}...` : str;
 
 NOTIFY_ROUTER.post('/offer', async (req, res) => {
-  let { offerName, offerDetails, targetPrice, commission, discordHandle } =
+  let { offerName, companyName, offerDetails, targetPrice, commission, discordHandle } =
     req.body;
   let body = req.body;
   console.log({body});
@@ -29,7 +29,8 @@ NOTIFY_ROUTER.post('/offer', async (req, res) => {
           name: 'Commission Percentage',
           value: commission
         },
-        { name: 'Discord Handle', value: discordHandle }
+        { name: 'Discord Handle', value: discordHandle },
+        { name: 'Company Name', value: companyName },
       )
       .setTimestamp();
 
