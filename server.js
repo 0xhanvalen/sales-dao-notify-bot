@@ -11,7 +11,7 @@ const createServer = (client) => {
     req.CLIENT = client;
     const { authorization } = req.headers;
     const token = authorization && authorization.split(' ')[1];
-    console.log(req.body);
+    console.log(req);
     if (token !== null) {
       try {
         next();
